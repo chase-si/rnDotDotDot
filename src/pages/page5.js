@@ -64,7 +64,7 @@ const Page5 = (props) => {
       })
     } else { // add animation after the current animation
       animating.current = true
-      Animated.add(
+      animationTimer.current = Animated.add(
         animationTimer.current,
         Animated.timing(
           targetAnim,

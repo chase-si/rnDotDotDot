@@ -14,7 +14,6 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-
       <NavigationContainer>
         <Stack.Navigator>
           {Object
@@ -28,7 +27,7 @@ export default function App() {
                   title: nav.title,
                   headerBackTitle: '返回上一页',
                   animation: "fade",
-                  orientation: "landscape"
+                  // orientation: "landscape"
                   // headerRight: () => (
                 }}
               />

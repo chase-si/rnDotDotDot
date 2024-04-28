@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
-import { View, Animated } from 'react-native';
+import { View, Animated, Alert } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
+import RNShake from 'react-native-shake';
 
 import Circle from '../components/circle.js';
 import useNavigation from '../hooks.js';
@@ -16,8 +17,14 @@ const Page1 = (props) => {
 
   useFocusEffect(() => {
     console.log('page1 focused')
+    alert('page12 focused')
+    const sub = RNShake.addListener(() => {
+      alert(123)
+      console.log('shake event 123!')
+    })
     return () => {
       // fadeAnim.setValue(0)
+      sub.remove()
       console.log('page1 unfocused!')
     }
   })
