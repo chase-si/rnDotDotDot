@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, TouchableHighlight } from 'react-native';
 
+import { cirleSize } from '../style.js'
+
 /**
  * @description circle button, could be pressed
  * @param {
@@ -19,8 +21,8 @@ const Circle = ({
     return (
         <TouchableHighlight
             style={{
-                width: 84,
-                height: 84, 
+                width: cirleSize,
+                height: cirleSize, 
                 borderRadius: 50,
                 shadowOffset: { width: 3, height: 6 }, // 阴影偏移量
                 shadowColor: '#000', // 阴影颜色

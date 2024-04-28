@@ -1,4 +1,6 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Platform } from 'react-native';
+
+export const cirleSize = Platform.isPad ? 84 : 42;
 
 export const pageContainer = StyleSheet.create({
   container: {

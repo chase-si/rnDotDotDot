@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Animated, Pressable } from 'react-native';
 
+import { cirleSize } from '../style.js'
+
 /**
  * @description a circle can be animated color, and pressed
  * @param {
@@ -21,8 +23,8 @@ const CircleAnimated = ({
     >
       <Animated.View
         style={{
-          width: 84,
-          height: 84,
+          width: cirleSize,
+          height: cirleSize,
           borderRadius: 50,
           shadowOffset: { width: 3, height: 6 }, // 阴影偏移量
           shadowColor: '#000', // 阴影颜色
