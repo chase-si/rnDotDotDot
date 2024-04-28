@@ -1,13 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, View } from 'react-native';
 
-import NAV_CONSTANTS from './src/navigators';
+import {
+  NAV_COMPONENTS_MAP,
+  NAV_CONSTANTS
+} from './src/navigators';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const navArr = useMemo(() => {
+    return Object.values(NAV_CONSTANTS).map(navItem =>({
+      name: navItem.name,
+      title: navItem.title,
+      component: NAV_COMPONENTS_MAP[navItem.name]
+    }))
+  }, [])
+
   useEffect(() => {
     console.log('app mounted')
   }, [])
@@ -16,8 +27,7 @@ export default function App() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          {Object
-            .values(NAV_CONSTANTS)
+          {navArr
             .map(nav => (
               <Stack.Screen
                 key={nav.name}

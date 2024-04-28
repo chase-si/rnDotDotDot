@@ -4,7 +4,8 @@ import { View, Animated } from 'react-native';
 import Circle from '../components/circle.js';
 import CircleAnimated from '../components/circleAnimated.js';
 import useNavigation from '../hooks.js';
-import NAV_CONSTANTS from '../navigators.js';
+import { NAV_CONSTANTS } from '../navigators';
+
 import { COLORS } from '../constants.js';
 import { pageContainer } from '../style.js';
 

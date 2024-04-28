@@ -3,7 +3,8 @@ import { View, Animated } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 
 import Circle from '../components/circle.js';
-import NAV_CONSTANTS from '../navigators.js';
+import { NAV_CONSTANTS } from '../navigators';
+
 import { COLORS } from '../constants.js';
 import { pageContainer } from '../style.js';
 
