@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, View } from 'react-native';
+import Orientation from "react-native-orientation-locker";
 
 import {
   NAV_COMPONENTS_MAP,
@@ -20,30 +21,30 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    console.log('app mounted')
+    Orientation.lockToLandscapeLeft();
   }, [])
 
   return (
     <View style={styles.container}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          {navArr
-            .map(nav => (
-              <Stack.Screen
-                key={nav.name}
-                name={nav.name}
-                component={nav.component}
-                options={{
-                  title: nav.title,
-                  headerBackTitle: '返回上一页',
-                  animation: "fade",
-                  // orientation: "landscape"
-                  // headerRight: () => (
-                }}
-              />
-            ))}
-        </Stack.Navigator>
-      </NavigationContainer>
+        <NavigationContainer>
+          <Stack.Navigator>
+            {navArr
+              .map(nav => (
+                <Stack.Screen
+                  key={nav.name}
+                  name={nav.name}
+                  component={nav.component}
+                  options={{
+                    title: nav.title,
+                    headerBackTitle: '返回上一页',
+                    animation: "fade",
+                    // orientation: "landscape"
+                    // headerRight: () => (
+                  }}
+                />
+              ))}
+          </Stack.Navigator>
+        </NavigationContainer>
     </View>
   );
 }

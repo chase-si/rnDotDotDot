@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { View, Animated, useWindowDimensions } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 import RNShake from 'react-native-shake';
+import Orientation from 'react-native-orientation-locker';
 
 import Circle from '../components/circle.js';
 import { NAV_CONSTANTS } from '../navigators';
@@ -25,6 +26,7 @@ const Page8 = (props) => {
       handleOnShark()
       console.log('shake event 123!')
     })
+
     return () => {
       // fadeAnim.setValue(0)
       shakeSub.remove(); 
