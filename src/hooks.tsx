@@ -2,7 +2,7 @@ import { Animated } from 'react-native';
 
 import { NAVIGATE_ANIMATE_TIME } from './constants.js';
 
-const useNavigation = (props) => {
+const useNavigation = (props: { navigation: any; }) => {
   const { navigation } = props
 
   /**
@@ -17,17 +17,28 @@ const useNavigation = (props) => {
       duration: 1000,
       useNativeDriver: true
     }
+  } : {
+    fadeAnim: Animated.Value,
+    navigateTargetName: string,
+    anmateEvent?: {
+      toValue: number,
+      duration: number,
+      useNativeDriver: boolean
+    }
+  
   }) => {
     Animated.timing(
       fadeAnim,
       anmateEvent
-    ).start(({ _finished }) => {
+    ).start(({ finished }: { finished: boolean }) => {
       navigation.navigate(navigateTargetName)
       setTimeout(() => {
         fadeAnim.setValue(0)
       }, NAVIGATE_ANIMATE_TIME)
     })
   }
+
+  // const getPositionRandomA
 
   return {
     pressToNavigate

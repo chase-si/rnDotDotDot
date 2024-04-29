@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { View, Animated } from 'react-native';
 
 import Circle from '../components/circle.js';
-import useNavigation from '../hooks.js';
+import useNavigation from '../hooks';
 import { NAV_CONSTANTS } from '../navigators';
 
 import { COLORS, NAVIGATE_ANIMATE_TIME } from '../constants.js';
