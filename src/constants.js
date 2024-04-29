@@ -136,3 +136,5 @@ export const COLORS = {
 }
 
 export const NAVIGATE_ANIMATE_TIME = 350;
+
+export const NAVBAR_HEIGHT = 48;

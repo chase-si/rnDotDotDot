@@ -6,6 +6,7 @@ import Page5 from './pages/page5.js';
 import Page6 from './pages/page6.js';
 import Page7 from './pages/page7.js';
 import Page8 from './pages/page8.js';
+import Page9 from './pages/page9.js';
 
 export const NAV_COMPONENTS_MAP : { [key: string] : any} = {
   'Page1': Page8,
@@ -15,7 +16,8 @@ export const NAV_COMPONENTS_MAP : { [key: string] : any} = {
   'Page5': Page5,
   'Page6': Page6,
   'Page7': Page7,
-  'Page8': Page8
+  'Page8': Page8,
+  'Page9': Page9,
 }
 
 export const NAV_CONSTANTS = {
@@ -50,5 +52,9 @@ export const NAV_CONSTANTS = {
   PAGE8: {
     name: 'Page8',
     title: '请晃一晃'
+  },
+  PAGE9: {
+    name: 'Page9',
+    title: '把屏幕竖起来'
   }
 }
