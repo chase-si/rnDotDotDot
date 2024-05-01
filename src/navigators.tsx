@@ -9,7 +9,7 @@ import Page8 from './pages/page8.js';
 import Page9 from './pages/page9.js';
 
 export const NAV_COMPONENTS_MAP : { [key: string] : any} = {
-  'Page1': Page8,
+  'Page1': Page1,
   'Page2': Page2,
   'Page3': Page3,
   'Page4': Page4,

@@ -21,7 +21,11 @@ export default function App() {
   }, [])
 
   useEffect(() => {
+    console.log(123)
     Orientation.lockToLandscapeLeft();
+    return () => {
+      console.log(456)
+    }
   }, [])
 
   return (
