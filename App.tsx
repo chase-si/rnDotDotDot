@@ -2,12 +2,13 @@ import { useEffect, useMemo } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, View } from 'react-native';
-import Orientation from "react-native-orientation-locker";
+import Orientation, { OrientationLocker, LANDSCAPE, PORTRAIT } from "react-native-orientation-locker";
 
 import {
   NAV_COMPONENTS_MAP,
   NAV_CONSTANTS
 } from './src/navigators';
+import { NAVIGATE_ANIMATE_TIME } from './src/constants'
 
 const Stack = createNativeStackNavigator();
 
@@ -21,16 +22,32 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    console.log(123)
-    Orientation.lockToLandscapeLeft();
+    Orientation.getOrientation((orientation) => {
+      console.log('get orientation when app mount', orientation)
+      if (orientation === PORTRAIT) {
+        Orientation.lockToLandscapeLeft();
+      }
+    });
     return () => {
-      console.log(456)
+      console.log('unmount app')
     }
   }, [])
 
   return (
     <View style={styles.container}>
         <NavigationContainer>
+        <OrientationLocker
+          orientation={LANDSCAPE}
+          onChange={(orientation) => {
+            // console.log('orientation', orientation)
+          }}
+          onDeviceChange={orientation => {
+            // console.log('onDeviceChange', orientation)
+            if (orientation === PORTRAIT) {
+              Orientation.lockToLandscapeLeft();
+            }
+          }}
+        />
           <Stack.Navigator>
             {navArr
               .map(nav => (
@@ -42,6 +59,7 @@ export default function App() {
                     title: nav.title,
                     headerBackTitle: '返回上一页',
                     animation: "fade",
+                    animationDuration: NAVIGATE_ANIMATE_TIME
                     // orientation: "landscape"
                     // headerRight: () => (
                   }}

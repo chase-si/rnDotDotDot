@@ -1,14 +1,12 @@
 import React, { useRef } from 'react';
-import { View, Animated, Alert } from 'react-native';
+import { View, Animated } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
-import RNShake from 'react-native-shake';
 
 import Circle from '../components/circle.js';
 import useNavigation from '../hooks';
 import { NAV_CONSTANTS } from '../navigators';
 import { COLORS } from '../constants.js';
 import { pageContainer } from '../style.js';
-
 
 const Page1 = (props) => {
   const { navigation } = props
