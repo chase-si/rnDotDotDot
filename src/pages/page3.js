@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { View, Animated } from 'react-native';
 
 import Circle from '../components/circle.js';
+import BlinkinAnimated from '../components/blinkingAnimated';
 import CircleAnimated from '../components/circleAnimated.js';
 import useNavigation from '../hooks';
 import { NAV_CONSTANTS } from '../navigators';
@@ -39,10 +40,12 @@ const Page3 = (props) => {
 
   return (
     <View style={pageContainer.container}>
-      <CircleAnimated
-        color={color}
-        onPress={handleOnPress}
-      />
+      <BlinkinAnimated>
+        <CircleAnimated
+          color={color}
+          onPress={handleOnPress}
+        />
+      </BlinkinAnimated>
       <Circle
         color={COLORS.yellow}
         underlayColor={COLORS.yellowAccessible}

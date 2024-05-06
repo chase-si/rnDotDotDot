@@ -4,6 +4,7 @@ import { useFocusEffect } from '@react-navigation/native';
 
 import Circle from '../components/circle.js';
 import { NAV_CONSTANTS } from '../navigators';
+import BlinkinAnimated from '../components/blinkingAnimated';
 
 import { COLORS } from '../constants';
 import { pageContainer } from '../style.js';
@@ -116,11 +117,13 @@ const Page7 = (props) => {
             underlayColor={COLORS.blueAccessible}
           />
         </Animated.View>
-        <Circle
-          onPress={() => handleOnPress()}
-          color={COLORS.blue}
-          underlayColor={COLORS.blueAccessible}
-        />
+        <BlinkinAnimated>
+          <Circle
+            onPress={() => handleOnPress()}
+            color={COLORS.blue}
+            underlayColor={COLORS.blueAccessible}
+          />
+        </BlinkinAnimated>
         <Animated.View
           style={{ opacity: fadeAnim2}}
         >

@@ -3,6 +3,7 @@ import { View, Animated } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 
 import Circle from '../components/circle.js';
+import BlinkinAnimated from '../components/blinkingAnimated';
 import { NAV_CONSTANTS } from '../navigators';
 
 import { COLORS } from '../constants';
@@ -98,10 +99,12 @@ const Page6 = (props) => {
             color={COLORS.red}
             underlayColor={COLORS.redAccessible} />
         </Animated.View>
-        <Circle
-          onPress={() => handleOnPress()}
-          color={COLORS.red}
-          underlayColor={COLORS.redAccessible} />
+        <BlinkinAnimated>
+          <Circle
+            onPress={() => handleOnPress()}
+            color={COLORS.red}
+            underlayColor={COLORS.redAccessible} />
+        </BlinkinAnimated>
         <Animated.View
           style={{ opacity: fadeAnim2 }}
         >
