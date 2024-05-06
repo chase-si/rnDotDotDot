@@ -4,7 +4,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Circle from '../components/circle.js';
-import { COLORS } from '../constants.js';
+import { COLORS } from '../constants';
 import { pageContainer } from '../style.js';
 import { NAV_CONSTANTS } from '../navigators';
 import useHooks from '../hooks';

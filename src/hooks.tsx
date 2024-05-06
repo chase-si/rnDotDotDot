@@ -1,7 +1,7 @@
 import { Animated, useWindowDimensions } from 'react-native';
 
 import { RefDomCurrent } from './types.js';
-import { NAVIGATE_ANIMATE_TIME, NAVBAR_HEIGHT } from './constants.js';
+import { NAVIGATE_ANIMATE_TIME, NAVBAR_HEIGHT } from './constants';
 import { getRefDomOriginXY, getRandomPosition } from './utils';
 
 const useHooks = (props: { navigation: any; }) => {

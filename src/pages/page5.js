@@ -5,7 +5,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import Circle from '../components/circle.js';
 import { NAV_CONSTANTS } from '../navigators';
 
-import { COLORS } from '../constants.js';
+import { COLORS } from '../constants';
 import { pageContainer } from '../style.js';
 
 const Page5 = (props) => {

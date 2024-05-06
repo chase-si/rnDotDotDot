@@ -6,7 +6,7 @@ import CircleAnimated from '../components/circleAnimated.js';
 import useNavigation from '../hooks'
 import { NAV_CONSTANTS } from '../navigators';
 
-import { COLORS } from '../constants.js';
+import { COLORS } from '../constants';
 import { pageContainer } from '../style.js';
 
 const Page4 = (props) => {

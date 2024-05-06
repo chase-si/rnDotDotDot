@@ -7,7 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Circle from '../components/circle.js';
 import useHooks from '../hooks';
 import { NAV_CONSTANTS } from '../navigators';
-import { COLORS } from '../constants.js';
+import { COLORS } from '../constants';
 import { pageContainer } from '../style.js';
 
 const Page8 = (props) => {
